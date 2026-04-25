@@ -1,0 +1,59 @@
+{
+  "id": "ayoaak.app.sub",
+  "name": "ayoaak",
+  "author": "@ayoaak",
+  "icon": "https://github.com/livinmoon/study/raw/main/livinmoon.png",
+  "repo": "https://github.com/livinmoon/study",
+  "apps": [
+    {
+      "id": "livinmoon.ChinaBroadnet",
+      "name": "中国广电",
+      "keys": ["@livinmoon.ChinaBroadnet.url", "@livinmoon.ChinaBroadnet.access", "@livinmoon.ChinaBroadnet.body"],
+      "author": "@livinmoon",
+      "script": "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.js",
+      "repo": "https://github.com/ayoaak/Scriptable/tree/main/ChinaBroadnet",
+      "icons": [
+        "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.png",
+        "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.png"
+      ]
+    },
+    {
+      "id": "livinmoon.ChinaTelegram",
+      "name": "中国电信",
+      "keys": ["@livinmoon.ChinaBroadnet.url", "@livinmoon.ChinaBroadnet.access", "@livinmoon.ChinaBroadnet.body"],
+      "author": "@livinmoon",
+      "script": "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.js",
+      "repo": "https://github.com/ayoaak/Scriptable/tree/main/ChinaBroadnet",
+      "icons": [
+        "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.png",
+        "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.png"
+      ]
+    },
+    {
+      "id": "yy_10000",
+      "name": "中国电信余量监控",
+      "keys": [
+        "china_telecom_loginUrl"
+      ],
+      "descs_html": [
+        "请先在配置中添加重写脚本，并手动登录 <a href='https://e.dlife.cn/index.do'>电信官网</a> 以获取登录地址。",
+        "获取成功后，地址会自动填充到下方的 '登录地址' 输入框中。"
+      ],
+      "settings": [
+        {
+          "id": "china_telecom_loginUrl",
+          "name": "登录地址 (Login URL)",
+          "val": "",
+          "type": "text",
+          "desc": "由重写脚本自动获取，格式通常包含 sign 参数。也可手动粘贴。"
+        }
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/ayoaak/Scriptable/main/icon/zgdx.png",
+        "https://raw.githubusercontent.com/ayoaak/Scriptable/main/icon/zgdx-big.png"
+      ],
+      "author": "@dompling",
+      "repo": "https://github.com/dompling/Script/tree/master/10000"
+    }
+  ]
+}
