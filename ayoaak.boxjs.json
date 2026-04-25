@@ -18,18 +18,6 @@
       ]
     },
     {
-      "id": "livinmoon.ChinaTelegram",
-      "name": "中国电信",
-      "keys": ["@livinmoon.ChinaBroadnet.url", "@livinmoon.ChinaBroadnet.access", "@livinmoon.ChinaBroadnet.body"],
-      "author": "@livinmoon",
-      "script": "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.js",
-      "repo": "https://github.com/ayoaak/Scriptable/tree/main/ChinaBroadnet",
-      "icons": [
-        "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.png",
-        "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.png"
-      ]
-    },
-    {
       "id": "yy_10000",
       "name": "中国电信余量监控",
       "keys": [
@@ -50,7 +38,7 @@
       ],
       "icons": [
         "https://raw.githubusercontent.com/ayoaak/Scriptable/main/icon/zgdx.png",
-        "https://raw.githubusercontent.com/ayoaak/Scriptable/main/icon/zgdx-big.png"
+        "https://raw.githubusercontent.com/ayoaak/Scriptable/main/icon/zgdx.png"
       ],
       "author": "@dompling",
       "repo": "https://github.com/dompling/Script/tree/master/10000"
