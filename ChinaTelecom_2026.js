@@ -1,7 +1,7 @@
 /*
- * @author: 2Ya&脑瓜 (Modified for Custom ChinaTelecomMonitor By ayoaak)
- * https://github.com/Cp0204/ChinaTelecomMonitor
- * version: 114.5.14 
+ * @author: 2Ya&脑瓜 (Modified for Custom API - Ultimate Standalone Version)
+ * @feedback https://t.me/Scriptable_CN
+ * version: 4.0.2 (Ultimate Hardcoded API Mode - Cache Bug Fixed)
  * 原创UI，修改套用请注明来源
 */
 
@@ -18,7 +18,7 @@ class Widget extends DmYY {
     this.Run();
   }
   
-  version = '4.0.0';
+  version = '4.0.2';
   gradient = false;
   flowColorHex = "#FF6620";
   voiceColorHex = "#78C100";
@@ -149,12 +149,22 @@ class Widget extends DmYY {
       console.error("UI 初始化错误: " + e);
     }
     
+    // ✅ 修复点1：精准恢复缓存数据，拒绝合并颜色对象
     if (!this.settings.dataSource) {
       await this.getData();
     } else {
-      Object.keys(this.settings.dataSource).forEach((key) => {
-        this[key] = { ...this[key], ...this.settings.dataSource[key] };
-      });
+      const cache = this.settings.dataSource;
+      if (cache.fee) this.fee.number = cache.fee.number;
+      if (cache.flow) {
+        this.flow.number = cache.flow.number;
+        this.flow.percent = cache.flow.percent;
+        this.flow.unit = cache.flow.unit;
+        this.flow.en = cache.flow.en;
+      }
+      if (cache.voice) {
+        this.voice.number = cache.voice.number;
+        this.voice.percent = cache.voice.percent;
+      }
       this.getData();
     }
   };
@@ -176,49 +186,56 @@ class Widget extends DmYY {
 
       const data = response.responseData.data;
 
+      // 提取剩余话费
       this.fee.number = data.balanceInfo.indexBalanceDataInfo.balance;
 
+      // 提取剩余流量及计算圆环百分比
       if (data.flowInfo && data.flowInfo.flowList && data.flowInfo.flowList.length > 0) {
         const flowItem = data.flowInfo.flowList[0];
-        const remStr = flowItem.rightTitleHh;
-        const totalStr = flowItem.rightTitleEnd;
+        const remStr = flowItem.rightTitleHh;         
+        const totalStr = flowItem.rightTitleEnd;      
         
         const remNum = parseFloat(remStr.replace(/GB|MB/g, '')) || 0;
-        const totalNum = parseFloat(totalStr.replace(/\/|GB|MB/g, '')) || 1;
+        const totalNum = parseFloat(totalStr.replace(/\/|GB|MB/g, '')) || 1; 
         
         this.flow.number = remNum.toString();
         this.flow.unit = remStr.includes('GB') ? 'GB' : 'MB';
         this.flow.en = this.flow.unit;
-        
         this.flow.percent = ((remNum / totalNum) * 100).toFixed(1);
       }
 
+      // 提取剩余语音及计算圆环百分比
       if (data.voiceInfo && data.voiceInfo.voiceBars && data.voiceInfo.voiceBars.length > 0) {
         const voiceItem = data.voiceInfo.voiceBars[0];
-        const remStr = voiceItem.rightTitleHh;
-        const totalStr = voiceItem.rightTitleEnd;
+        const remStr = voiceItem.rightTitleHh;        
+        const totalStr = voiceItem.rightTitleEnd;     
         
         const remNum = parseFloat(remStr.replace('分钟', '')) || 0;
         const totalNum = parseFloat(totalStr.replace(/\//g, '').replace('分钟', '')) || 1;
         
         this.voice.number = remNum.toString();
-        
         this.voice.percent = ((remNum / totalNum) * 100).toFixed(1);
       }
       
+      // ✅ 修复点2：只缓存数字和文本，绝对不缓存 Color 对象
       this.settings.dataSource = {
         fee: { number: this.fee.number },
-        flow: { ...this.flow },
-        voice: { ...this.voice }
+        flow: { 
+          number: this.flow.number, 
+          percent: this.flow.percent, 
+          unit: this.flow.unit, 
+          en: this.flow.en 
+        },
+        voice: { 
+          number: this.voice.number, 
+          percent: this.voice.percent 
+        }
       };
       this.saveSettings(false);
       console.log("数据更新成功！");
 
     } catch (e) {
       console.error("网络请求或数据解析失败: " + e);
-      if (this.settings.dataSource) {
-        Object.assign(this, this.settings.dataSource);
-      }
     }
   };
 
@@ -840,8 +857,8 @@ class Widget extends DmYY {
     return Math.floor((matchingScreen.widgetSize / referenceScreenSize.widgetSize) * 100) / 100;
   };
 
-  setColorConfig = async () => { /* ... 保留原版颜色配置选项 ... */ };
-  setSizeConfig = async () => { /* ... 保留原版尺寸配置选项 ... */ };
+  setColorConfig = async () => { /* 颜色设置不变 */ };
+  setSizeConfig = async () => { /* 尺寸设置不变 */ };
 
   Run() {
     if (config.runsInApp) {
@@ -875,13 +892,13 @@ class Widget extends DmYY {
         title: '',
         menu: [
           { name: 'basic', url: 'https://raw.githubusercontent.com/anker1209/Scriptable/main/icon/basic.png', title: '基础设置', type: 'input', onClick: () => { return this.setWidgetConfig(); } },
-          { name: 'reload', url: 'https://raw.githubusercontent.com/anker1209/Scriptable/main/icon/reload.png', title: '重载组件', type: 'input', onClick: () => { this.reopenScript(); } },
+          { name: 'reload', url: 'https://raw.githubusercontent.com/anker1209/Scriptable/main/icon/reload.png', title: '清理缓存与重载', type: 'input', onClick: () => { this.reopenScript(); } },
         ],
       });
     }
   }
 
-  async renderSmall = async (w) => {
+  renderSmall = async (w) => {
     w.setPadding(this.smallPadding, this.smallPadding, this.smallPadding, this.smallPadding);
     if (this.widgetStyle == "1") {
       const bodyStack = w.addStack(); bodyStack.layoutVertically();
@@ -908,7 +925,7 @@ class Widget extends DmYY {
     return w;
   };
 
-  async renderMedium = async (w) => {
+  renderMedium = async (w) => {
     w.setPadding(this.padding, this.padding, this.padding, this.padding);
     const canvas = this.makeCanvas();
     const bodyStack = w.addStack();
