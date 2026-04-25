@@ -8,7 +8,11 @@
     {
       "id": "livinmoon.ChinaBroadnet",
       "name": "中国广电",
-      "keys": ["@livinmoon.ChinaBroadnet.url", "@livinmoon.ChinaBroadnet.access", "@livinmoon.ChinaBroadnet.body"],
+      "keys": [
+        "@livinmoon.ChinaBroadnet.url",
+        "@livinmoon.ChinaBroadnet.access",
+        "@livinmoon.ChinaBroadnet.body"
+      ],
       "author": "@livinmoon",
       "script": "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.js",
       "repo": "https://github.com/ayoaak/Scriptable/tree/main/ChinaBroadnet",
@@ -18,14 +22,8 @@
       ]
     },
     {
-  "id": "ayoaak.ChinaTelecom",
-  "name": "中国电信",
-  "author": "ayoaak",
-  "icon": "https://raw.githubusercontent.com/anker1209/icon/main/zgdx.png",
-  "apps": [
-    {
       "id": "telecom_api",
-      "name": "电信接口配置",
+      "name": "中国电信接口配置",
       "keys": [
         "telecom_url",
         "telecom_key",
@@ -60,10 +58,11 @@
           "type": "password"
         }
       ],
-      "author": "Custom",
-      "repo": ""
+      "author": "ayoaak",
+      "icons": [
+        "https://raw.githubusercontent.com/anker1209/icon/main/zgdx.png",
+        "https://raw.githubusercontent.com/anker1209/icon/main/zgdx.png"
+      ]
     }
-  ]
-}
   ]
 }
