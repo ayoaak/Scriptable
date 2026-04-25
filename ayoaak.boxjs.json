@@ -16,13 +16,7 @@
         "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.png",
         "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.png"
       ]
-    }
-    {
-  "id": "yy_10000",
-  "name": "中国电信",
-  "author": "@ayoaak",
-  "icon": "https://raw.githubusercontent.com/ayoaak/Scriptable/main/icon/zgdx.png",
-  "apps": [
+    },
     {
       "id": "yy_10000",
       "name": "电信自动登录",
@@ -41,7 +35,5 @@
       "author": "@ayoaak",
       "repo": "https://github.com/dompling/Script"
     }
-  ]
-}
   ]
 }
