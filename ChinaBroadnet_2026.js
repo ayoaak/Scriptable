@@ -6,7 +6,7 @@
  * @author: 脑瓜
  * @feedback https://t.me/Scriptable_CN
  * telegram: @anker1209
- * version: 1.2.2
+ * version: 1.2.3 (Fixed NaN Issue)
  * update: 2024/12/06
  * 原创UI，修改套用请注明来源
  * 广电教程（获取后运行小组件脚本,点击代理缓存即可）：
@@ -20,13 +20,13 @@ class Widget extends DmYY {
   constructor(arg) {
     super(arg);
     this.name = '中国广电';
-    this.en = 'ChinaBroadnet_2024';
+    this.en = 'ChinaBroadnet_2026';
     this.logo = 'https://raw.githubusercontent.com/ayoaak/Scriptable/main/icon/zggd-big.png';
     this.smallLogo = 'https://raw.githubusercontent.com/ayoaak/Scriptable/main/icon/zggd.png';
     this.Run();
   }
   
-  version = '1.2.2';
+  version = '1.2.3';
 
   access = ''; 
   body = '';
@@ -205,11 +205,18 @@ class Widget extends DmYY {
         console.log('获取信息成功');
         console.log(userInfo);
         const data = userInfo.data.userData;
+        
         this.fee.number = data.fee / 100;
         this.flow.number = (data.flow / 1048576).toFixed(2);
-        this.flow.percent = ((data.flow / data.flowAll) * 100).toFixed(2);
+        
+        // 【修改点】: 增加防止除以0的错误，如果总量大于0再计算百分比，否则直接为 0
+        this.flow.percent = data.flowAll > 0 ? ((data.flow / data.flowAll) * 100).toFixed(2) : 0;
+        
         this.voice.number = data.voice;
-        this.voice.percent = ((data.voice / data.voiceAll) * 100).toFixed(2);
+        
+        // 【修改点】: 增加防止除以0的错误，如果总量大于0再计算百分比，否则直接为 0
+        this.voice.percent = data.voiceAll > 0 ? ((data.voice / data.voiceAll) * 100).toFixed(2) : 0;
+
       } else {
         throw 'cookie错误/服务器维护';
       }
