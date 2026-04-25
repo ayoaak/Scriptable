@@ -16,6 +16,54 @@
         "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.png",
         "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.png"
       ]
+    },
+    {
+  "id": "ayoaak.ChinaTelecom",
+  "name": "中国电信",
+  "author": "ayoaak",
+  "icon": "https://raw.githubusercontent.com/anker1209/icon/main/zgdx.png",
+  "apps": [
+    {
+      "id": "telecom_api",
+      "name": "电信接口配置",
+      "keys": [
+        "telecom_url",
+        "telecom_key",
+        "telecom_phone",
+        "telecom_pwd"
+      ],
+      "settings": [
+        {
+          "id": "telecom_url",
+          "name": "服务器地址",
+          "val": "1.2.3.4",
+          "type": "text",
+          "desc": "输入你的服务器 IP 或域名 (不要带 http://)"
+        },
+        {
+          "id": "telecom_key",
+          "name": "请求内容 Key",
+          "val": "",
+          "type": "text",
+          "desc": "接口的路径 Key"
+        },
+        {
+          "id": "telecom_phone",
+          "name": "手机号",
+          "val": "",
+          "type": "text"
+        },
+        {
+          "id": "telecom_pwd",
+          "name": "登录密码",
+          "val": "",
+          "type": "password"
+        }
+      ],
+      "author": "Custom",
+      "repo": ""
     }
+  ]
+}
   ]
 }
