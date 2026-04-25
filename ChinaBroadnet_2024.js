@@ -1314,8 +1314,8 @@ class Widget extends DmYY {
   Run() {
     if (config.runsInApp) {
       const widgetInitConfig = {
-        access: '@wuhuhu.ChinaBroadnet.access',
-        body: '@wuhuhu.ChinaBroadnet.body'
+        access: '@livinmoon.ChinaBroadnet.access',
+        body: '@livinmoon.ChinaBroadnet.body'
       };
       this.registerAction({
         title: '组件配置',
