@@ -1,7 +1,8 @@
 /*
- * @author: 2Ya&脑瓜 (Modified for Custom API - Ultimate Standalone Version)
- * @feedback https://t.me/Scriptable_CN
- * version: 4.0.2 (Ultimate Hardcoded API Mode - Cache Bug Fixed)
+ * @author: 2Ya&脑瓜 (Modified for ChinaTelecomMonitor By @ayoaak)
+ * https://github.com/Cp0204/ChinaTelecomMonitor
+ * https://github.com/ayoaak/Scriptable
+ * version: 114.5.14
  * 原创UI，修改套用请注明来源
 */
 
@@ -149,7 +150,6 @@ class Widget extends DmYY {
       console.error("UI 初始化错误: " + e);
     }
     
-    // ✅ 修复点1：精准恢复缓存数据，拒绝合并颜色对象
     if (!this.settings.dataSource) {
       await this.getData();
     } else {
@@ -186,10 +186,8 @@ class Widget extends DmYY {
 
       const data = response.responseData.data;
 
-      // 提取剩余话费
       this.fee.number = data.balanceInfo.indexBalanceDataInfo.balance;
 
-      // 提取剩余流量及计算圆环百分比
       if (data.flowInfo && data.flowInfo.flowList && data.flowInfo.flowList.length > 0) {
         const flowItem = data.flowInfo.flowList[0];
         const remStr = flowItem.rightTitleHh;         
@@ -204,7 +202,6 @@ class Widget extends DmYY {
         this.flow.percent = ((remNum / totalNum) * 100).toFixed(1);
       }
 
-      // 提取剩余语音及计算圆环百分比
       if (data.voiceInfo && data.voiceInfo.voiceBars && data.voiceInfo.voiceBars.length > 0) {
         const voiceItem = data.voiceInfo.voiceBars[0];
         const remStr = voiceItem.rightTitleHh;        
@@ -217,7 +214,6 @@ class Widget extends DmYY {
         this.voice.percent = ((remNum / totalNum) * 100).toFixed(1);
       }
       
-      // ✅ 修复点2：只缓存数字和文本，绝对不缓存 Color 对象
       this.settings.dataSource = {
         fee: { number: this.fee.number },
         flow: { 
