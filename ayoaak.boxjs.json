@@ -16,24 +16,6 @@
         "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.png",
         "https://raw.githubusercontent.com/ayoaak/Scriptable/refs/heads/main/ChinaBroadnet/ChinaBroadnet.png"
       ]
-    },
-    {
-      "id": "yy_10000",
-      "name": "电信自动登录",
-      "keys": [
-        "china_telecom_loginUrl"
-      ],
-      "settings": [
-        {
-          "id": "china_telecom_loginUrl",
-          "name": "登录地址 (Login URL)",
-          "val": "",
-          "type": "text",
-          "desc": "这是由脚本 index.js 自动抓取的电信登录链接。"
-        }
-      ],
-      "author": "@ayoaak",
-      "repo": "https://github.com/dompling/Script"
     }
   ]
 }
