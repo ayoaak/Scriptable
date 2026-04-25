@@ -1,0 +1,182 @@
+{
+  "author": "脑瓜",
+  "scriptable": true,
+  "icon": "https://avatars2.githubusercontent.com/u/76637082?s=460&u=32c8666ab3e3e7e0aa5c2c570c9e8342f262a925&v=4",
+  "repo": "https://github.com/anker1209/Scriptable",
+  "apps": [
+    {
+      "version": "2.3.0",
+      "author": "脑瓜",
+      "description": "显示京东用户信息、物流信息、白条还款信息、京豆K线图、金豆收支、钢镚、金贴、红包信息",
+      "scriptURL": "https://raw.githubusercontent.com/anker1209/Scriptable/main/scripts/JD-in-one-v2.js",
+      "thumb": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b1ebbd3c-ca49-405b-957b-effe60782276/e0d872b9-4866-4abf-87f4-a681083e6e04.png",
+      "name": "JD-in-one-v2",
+      "title": "JD-in-one-v2",
+      "depend": [
+        {
+          "name": "DmYY",
+          "scriptURL": "https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/DmYY.js"
+        }
+      ],
+      "html": [
+        "作者：<a href=\"https://github.com/anker1209/Scriptable\">@anker1209</a>",
+        "<br/>",
+        "<br/>",
+        "<h4 align=\"center\">更新说明</h4>",
+        "v2.3.0",
+        "<li>修复京享值</li>",
+        "v2.2.9",
+        "<li>修复设置页面图片不显示的问题</li>",
+        "v2.2.8",
+        "<li>修复图片不显示的问题</li>",
+        "v2.2.7",
+        "<li>默认账号设置成功时，若无参数输入则缓存</li>",
+        "v2.2.6",
+        "<li>脚本调整为直接读取BoxJS内的CK，多账号用户无需点击代理缓存读取CK</li>",
+        "v2.2.5",
+        "<li>增加东东农场种植进度</li>",
+        "<li>缓存目录默认为Local，可选iCloud</li>",
+        "<li>修复京享值显示</li>",
+        "<li>红包修改为显示所有红包</li>",
+        "<li>修复图标不显示</li>",
+        "<li>取消过期京豆显示</li>",
+        "<br/>",
+        "<h3 align=\"center\">使用说明</h3>"
+      ],
+      "images": [
+        "https://raw.githubusercontent.com/anker1209/Scriptable/main/image/IMG_7150.png",
+        "https://raw.githubusercontent.com/anker1209/Scriptable/main/image/IMG_7151.png"
+      ]
+    },
+    {
+      "version": "1.0.3",
+      "author": "2Ya",
+      "description": "脚本来自2Ya破壳日，修复农历生日显示错误，有任何问题@anker1209",
+      "scriptURL": "https://raw.githubusercontent.com/anker1209/Scriptable/main/scripts/Birthday.js",
+      "thumb": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/d0eee765-d320-490d-a611-5d1b49590441.png",
+      "name": "Birthday",
+      "title": "破壳日",
+      "depend": [
+        {
+          "name": "DmYY",
+          "scriptURL": "https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/DmYY.js"
+        },
+        {
+          "name": "Calendar",
+          "scriptURL": "https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/Calendar.js"
+        }
+      ],
+      "html": [
+        "原作者：<a href=\"https://github.com/dompling/Scriptable\">@dompling</a>",
+        "<br/>",
+        "<br/>",
+        "<h4 align=\"center\">更新说明</h4>",
+        "<li>v1.0.3  修改年龄/相识显示</li>",
+        "<li>v1.0.2  修复当月显示bug</li>",
+        "<li>v1.0.1  增加年、月、天显示</li>",
+        "<br/>",
+        "<h3 align=\"center\">日期填写说明</h3>",
+        "<h4>生日配置</h4>",
+        "<li>如果过阳历生日，第二行填写阳历生日，第三行填写false或者不填</li>",
+        "<li>如果过农历生日，第二行填写农历日期，第三行填写true</li>",
+        "<li>无论阳历还是农历，日期格式均为年-月-日，如：2020-01-01</li>",
+        "<li>第四行填写阳历日期</li>"
+      ],
+      "images": [
+        "https://raw.githubusercontent.com/anker1209/Scriptable/main/image/IMG_7065.PNG"
+      ]
+    },
+    {
+      "version": "2.1.0",
+      "author": "脑瓜",
+      "description": "中国联通小组件，两种模式，默认为圆环进度条模式，主屏幕长按小组件-->编辑小组件-->Parameter，输入1，使用文字模式",
+      "scriptURL": "https://raw.githubusercontent.com/anker1209/Scriptable/main/scripts/ChinaUnicom_2021.js",
+      "thumb": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-imgbed/34ebdddc-90a8-4eb7-828b-f934c7386e12.png",
+      "name": "Chinaunicom_2021",
+      "title": "中国联通",
+      "depend": [
+        {
+          "name": "DmYY",
+          "scriptURL": "https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/DmYY.js"
+        }
+      ],
+      "html": [
+        "作者：<a href=\"https://github.com/anker1209/Scriptable\">@anker1209</a>",
+        "<br/>",
+        "教程：<a href=\"https://github.com/anker1209/Scriptable\">https://github.com/anker1209/Scriptable</a>",
+        "<br/>",
+        "<br/>",
+        "<h4 align=\"center\">更新说明</h4>",
+        "v2.1.0",
+        "<li>修改cookie获取方式</li>",
+        "<br/>"
+      ],
+      "images": [
+        "https://raw.githubusercontent.com/anker1209/Scriptable/main/image/screenzy-1614423603123-lt.png"
+      ]
+    },
+    {
+      "version": "1.2.0",
+      "author": "脑瓜",
+      "description": "中国电信小组件，两种模式，默认为圆环进度条模式，主屏幕长按小组件-->编辑小组件-->Parameter，输入1，使用文字模式",
+      "scriptURL": "https://raw.githubusercontent.com/anker1209/Scriptable/main/scripts/ChinaTelecom_2024.js",
+      "thumb": "https://raw.githubusercontent.com/Orz-3/mini/master/Color/10000.png",
+      "name": "ChinaTelecom_2024",
+      "title": "中国电信",
+      "depend": [
+        {
+          "name": "DmYY",
+          "scriptURL": "https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/DmYY.js"
+        }
+      ],
+      "html": [
+        "作者：<a href=\"https://github.com/anker1209/Scriptable\">@anker1209</a>",
+        "<br/>",
+        "教程：<a href=\"https://github.com/anker1209/Scriptable\">https://github.com/anker1209/Scriptable</a>",
+        "<br/>",
+        "<br/>",
+        "<h4 align=\"center\">更新说明</h4>",
+        "v1.1.0",
+        "<li>更新设置页面图标</li>",
+        "v1.2.0",
+        "<li>更新自动登录相关（修改自@95du丶茅台）</li>",
+        "<br/>"
+      ],
+      "images": [
+        "https://raw.githubusercontent.com/anker1209/Scriptable/main/image/screenzy-1614423524222-dx.png"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "author": "脑瓜",
+      "description": "中国移动小组件，两种模式，默认为圆环进度条模式，主屏幕长按小组件-->编辑小组件-->Parameter，输入1，使用文字模式",
+      "scriptURL": "https://raw.githubusercontent.com/anker1209/Scriptable/main/scripts/ChinaMobile_2021.js",
+      "thumb": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-b1ebbd3c-ca49-405b-957b-effe60782276/3270c85e-2904-44cc-85cd-8de325b05743.png",
+      "name": "ChinaMobile_2021",
+      "title": "中国移动",
+      "depend": [
+        {
+          "name": "DmYY",
+          "scriptURL": "https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/DmYY.js"
+        },
+        {
+          "name": "crypto-js",
+          "scriptURL": "https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/crypto-js.min.js"
+        }
+      ],
+      "html": [
+        "作者：<a href=\"https://github.com/anker1209/Scriptable\">@anker1209</a>",
+        "<br/>",
+        "教程：<a href=\"https://github.com/anker1209/Scriptable\">https://github.com/anker1209/Scriptable</a>",
+        "<br/>",
+        "<br/>",
+        "<h4 align=\"center\">更新说明</h4>",
+        "v1.0.1",
+        "<li>更新渐变色数组</li>"
+      ],
+      "images": [
+        "https://raw.githubusercontent.com/anker1209/Scriptable/main/image/screenzy-1614423457282-yd.png"
+      ]
+    }
+  ]
+}
